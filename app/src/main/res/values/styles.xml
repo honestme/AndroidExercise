@@ -8,4 +8,37 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BaseThem.GridViewStyle" parent="Widget">
+        <item name="android:horizontalSpacing">10dp</item>
+        <item name="android:verticalSpacing">10dp</item>
+        <item name="android:columnWidth">80dp</item>
+        <item name="android:numColumns">auto_fit</item>
+    </style>
+
+    <style name="BaseTheme.TextViewStyle" parent="Widget">
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--Csdn app theme.-->
+    <style name="MyTheme.Csdn" parent="AppTheme">
+        <item name="vpiTabPageIndicatorStyle">@style/MyTextAppearance.CsdnPageIndicator</item>
+        <item name="android:windowBackground">@drawable/init_pic</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:animationDuration">100000</item>
+    </style>
+    <style name="MyWidget.CsdnTabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAppearance">@style/MyTextAppearance.CsdnPageIndicator</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="MyTextAppearance.CsdnPageIndicator" parent="Widget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 </resources>

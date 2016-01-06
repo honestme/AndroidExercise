@@ -3,6 +3,7 @@ package com.honestme.androidexercise;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -23,9 +24,14 @@ public class BaseViewHolder {
         mContentView = contentView;
     }
 
-    public void setTextView(String text,int ResourceId){
-        TextView textView = (TextView)mContentView.findViewById(ResourceId);
+    public void setTextView(String text,int resourceId){
+        TextView textView = (TextView)mContentView.findViewById(resourceId);
         textView.setText(text);
+
+    }
+
+    public void setImageView(String imageUrl,int resourceId){
+        ImageView imageView = (ImageView)mContentView.findViewById(resourceId);
 
     }
 }

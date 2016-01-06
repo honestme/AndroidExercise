@@ -21,6 +21,7 @@ public class LogUtil{
     }
 
     public static void d(String tag,String msg){
+        tag = "zcl" + tag;
         if(LEVEL <= DEBUG){
             Log.d(tag, msg);
         }

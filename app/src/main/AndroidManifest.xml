@@ -19,6 +19,9 @@
             android:process=":remote">
 
         </service>
+
+        <activity android:name=".app.csdn.CSDNMainActivity"
+            android:theme="@style/MyTheme.Csdn"></activity>
     </application>
 
 </manifest>

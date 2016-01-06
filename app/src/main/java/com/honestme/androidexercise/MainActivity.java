@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.honestme.androidexercise.IPC.MessengerClient;
+import com.honestme.androidexercise.app.csdn.CSDNMainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity{
 
     private GridView mGridView;
 
-    private String[] mItems = {"Messenger test"};
+    private String[] mItems = {"Messenger test","Csdn app"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         mContext = this;
 
-        mGridView = (GridView)findViewById(R.id.main_grid);
+        mGridView = (GridView)findViewById(R.id.main_base_grid);
 
         mList = new ArrayList<HonestItem>();
         getData();
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity{
                         Intent intent = new Intent(mContext, MessengerClient.class);
                         startActivity(intent);
                         break;
+                    case "Csdn app":
+                        Intent intent_csdn = new Intent(mContext, CSDNMainActivity.class);
+                        startActivity(intent_csdn);
 
                 }
             }
