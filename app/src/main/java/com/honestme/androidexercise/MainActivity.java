@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.honestme.androidexercise.IPC.MessengerClient;
+import com.honestme.androidexercise.ipc.MessengerClient;
 import com.honestme.androidexercise.app.csdn.CSDNMainActivity;
 
 import java.util.ArrayList;

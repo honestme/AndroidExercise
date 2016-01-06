@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.honestme.androidexercise">
+<manifest package="com.honestme.androidexercise"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,18 +10,27 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service android:name=".IPC.MessengerServer"
-            android:process=":remote">
 
+        <service
+            android:name=".ipc.MessengerServer"
+            android:process=":remote">
         </service>
 
-        <activity android:name=".app.csdn.CSDNMainActivity"
-            android:theme="@style/MyTheme.Csdn"></activity>
+        <activity
+            android:name=".app.csdn.CSDNMainActivity"
+            android:theme="@style/MyTheme.Csdn"/>
+
+        <service
+            android:name=".ipc.aidl.BookManagerService"
+            android:process=":remote"/>
+
+        <activity android:name=".ipc.aidl.AIDLMainActivity">
+        </activity>
     </application>
 
 </manifest>
