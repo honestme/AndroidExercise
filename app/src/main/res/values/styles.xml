@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="BaseThem.GridViewStyle" parent="Widget">
+    <style name="BaseTheme.GridViewStyle" parent="Widget">
         <item name="android:horizontalSpacing">10dp</item>
         <item name="android:verticalSpacing">10dp</item>
         <item name="android:columnWidth">80dp</item>

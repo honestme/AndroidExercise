@@ -1,4 +1,4 @@
-package com.honestme.androidexercise.IPC;
+package com.honestme.androidexercise.ipc;
 
 import android.app.Activity;
 import android.content.ComponentName;

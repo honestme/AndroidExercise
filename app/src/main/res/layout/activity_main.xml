@@ -19,7 +19,7 @@
             android:id="@+id/main_base_grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@style/BaseThem.GridViewStyle"
+            style="@style/BaseTheme.GridViewStyle"
             ></GridView>
         <TextView
             android:layout_width="wrap_content"
@@ -30,6 +30,15 @@
             android:id="@+id/main_app_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/BaseThem.GridViewStyle"></GridView>
+            style="@style/BaseTheme.GridViewStyle"></GridView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BaseTheme.TextViewStyle"/>
+        <GridView
+            android:id="@+id/main_tools_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/BaseTheme.GridViewStyle"></GridView>
     </LinearLayout>
 </ScrollView>

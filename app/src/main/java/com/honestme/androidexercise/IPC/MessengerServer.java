@@ -1,4 +1,4 @@
-package com.honestme.androidexercise.IPC;
+package com.honestme.androidexercise.ipc;
 
 import android.app.Service;
 import android.content.Intent;
@@ -20,7 +20,7 @@ public class MessengerServer extends Service {
     private class MessengerHandler extends android.os.Handler{
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what) {
+        switch (msg.what) {
                 case Constant.MESSAGE_FROM_CLIENT:
                     Bundle bundle = msg.getData();
                     String message = bundle.getString("msg");
@@ -30,7 +30,9 @@ public class MessengerServer extends Service {
                     super.handleMessage(msg);
             }
 
+
         }
+
     }
 
     private Messenger mMessenger = new Messenger(new MessengerHandler());

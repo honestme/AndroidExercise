@@ -31,6 +31,19 @@
 
         <activity android:name=".ipc.aidl.AIDLMainActivity">
         </activity>
+        <activity android:name=".tools.myimageloader.MyImageLoaderActivity">
+        </activity>
+        <activity android:name=".basic.sharesimpledata.ShareSimpleDataActivity">
+        </activity>
+        <activity android:name=".basic.sharesimpledata.AcceptSimpleDataActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND">
+                </action>
+                <action android:name="android.intent.action.SEND_MULTIPLE"></action>
+                <data android:mimeType="text/plain"></data>
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

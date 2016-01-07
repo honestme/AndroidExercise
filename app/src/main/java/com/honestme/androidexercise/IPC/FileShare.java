@@ -1,4 +1,4 @@
-package com.honestme.androidexercise.IPC;
+package com.honestme.androidexercise.ipc;
 
 import com.honestme.androidexercise.HonestItem;
 
@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 
 /**
  * Created by zhangconglin on 2015/12/27.

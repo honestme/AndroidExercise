@@ -4,7 +4,9 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -26,9 +28,12 @@ public class BookManagerService extends Service {
     private CopyOnWriteArrayList<INewBookArrivedListener> mListeners = new CopyOnWriteArrayList
             <INewBookArrivedListener>();
 
+    private RemoteCallbackList<INewBookArrivedListener> mListenerList = new RemoteCallbackList<INewBookArrivedListener>();
+
     private Binder mBinder = new IBookManager.Stub(){
         @Override
         public List<Book> getBookList() throws RemoteException {
+            SystemClock.sleep(5000);
             return mArrayList;
         }
 
@@ -41,6 +46,8 @@ public class BookManagerService extends Service {
         public void registerNewBookArrivedListener(INewBookArrivedListener listener) throws RemoteException {
             if(!mListeners.contains(listener)){
                 mListeners.add(listener);
+                mListenerList.register(listener);
+
             }else {
                 LogUtil.d(TAG,"Already registered before,can't register again");
             }
@@ -51,7 +58,8 @@ public class BookManagerService extends Service {
         @Override
         public void unRegisterNewBookArrivedListener(INewBookArrivedListener listener) throws RemoteException {
             if(mListeners.contains(listener)){
-               mListeners.remove(listener);
+                mListeners.remove(listener);
+                mListenerList.unregister(listener);
             }else {
                 LogUtil.d(TAG,"Not registered,can't find the mark");
             }
@@ -75,15 +83,22 @@ public class BookManagerService extends Service {
     public void onNewBookArrived(Book book){
 
         mArrayList.add(book);
-        try {
 
-            for (INewBookArrivedListener listener:mListeners
-             ) {
-                listener.onNewBookArrived(book);
+        int length = mListenerList.beginBroadcast();
+
+        try {
+             for(int i = 0;i < length;++i){
+                 INewBookArrivedListener listener = mListenerList.getBroadcastItem(i);
+
+                 if(listener != null){
+                    listener.onNewBookArrived(book);
+                 }
+                 mListenerList.finishBroadcast();
             }
         }catch (Exception ex){
             ex.printStackTrace();
         }
+
 
     }
 

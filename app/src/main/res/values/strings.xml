@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">AndroidExercise</string>
+
+    <!--basic-->
+    <string name="basic_messenger">
+        服务器端：
+        1.建立一个service
+        2.service里定义一个Handler,用来处理客户端发出的信息，并根据Message类中的what字段判断客户端的信息类型。
+        注：这个信息类型是服务器端设置的int常量，客户端调用这些常量生成Message。
+        3.定义一个Messenger，该Messenger的参数为刚才的Handler，并在Service的onBinder方法中返回Messenger
+        中的IBinder成员变量。
+
+        客户端：
+        1.定义一个ServiceConnection，在ServiceConnection的onServiceConnected方法中定义
+        2.在onCreate方法中调用onBindService,第二个参数即为刚才的ServiceConnection
+
+
+        Messenger的优缺点：
+        优点：使用非常简单，一些重要的操作由系统完成，我们需要做的事情很少；支持即时通信；支持一对多串行通信（即一个
+        客户正在通信的话，其他用户就需要等待）。
+        缺点：处理高并发通信的能力很差；只支持Bundle支持的数据类型
+    </string>
+    <!--app-->
+
+    <!--tools-->
+    <string name="tools_my_image_loader_explain">
+
+    </string>
 </resources>
