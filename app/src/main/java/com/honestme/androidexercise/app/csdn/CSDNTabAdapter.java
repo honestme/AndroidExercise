@@ -24,7 +24,7 @@ public class CSDNTabAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        Fragment mainFragment = new Fragment();
+        CSDNMainFragment mainFragment = new CSDNMainFragment();
         mArgs.putInt("type", position);
         mainFragment.setArguments(mArgs);
         return mainFragment;

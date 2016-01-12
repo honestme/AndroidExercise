@@ -84,7 +84,7 @@ public class CSDNApiUtil {
         return stringBuffer.toString();
     }
 
-    public static List<CSDNNewsItem> getDataFromHtml(int newsType,int page){
+    public static List<CSDNNewsItem> getNewsTitleFromHtml(int newsType, int page){
         List<CSDNNewsItem> newsItemList = new ArrayList<CSDNNewsItem>();
         CSDNNewsItem newsItem = null;
 
@@ -145,5 +145,21 @@ public class CSDNApiUtil {
         }
 
         return newsItemList;
+    }
+
+    public static void getNewsContent(String urlStr){
+        try {
+            String htmlStr = getHtmlFromUrl(urlStr);
+            org.jsoup.nodes.Document document = Jsoup.parse(htmlStr);
+
+            org.jsoup.nodes.Element element = document.select(".left.detail").get(0);
+
+            org.jsoup.nodes.Element elementTitle = element.select("h1.title").get(0);
+            String title = elementTitle.text();
+
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }

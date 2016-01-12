@@ -39,10 +39,21 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEND">
                 </action>
-                <action android:name="android.intent.action.SEND_MULTIPLE"></action>
-                <data android:mimeType="text/plain"></data>
-            </intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <action android:name="android.intent.action.SEND"/>
 
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                    android:mimeType="image/*"
+                    android:scheme="http"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".basic.multimedia.MultiMediaActivity">
+        </activity>
+        <activity android:name=".app.animetasteextra.ATEMainActivity">
         </activity>
     </application>
 

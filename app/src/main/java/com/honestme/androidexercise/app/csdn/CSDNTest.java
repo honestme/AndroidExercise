@@ -10,7 +10,7 @@ public class CSDNTest {
 
     public void test(){
         try{
-            List<CSDNNewsItem> list = CSDNApiUtil.getDataFromHtml(CSDNApiUtil.NEWS_CHENGXUYUAN,currentPage);
+            List<CSDNNewsItem> list = CSDNApiUtil.getNewsTitleFromHtml(CSDNApiUtil.NEWS_CHENGXUYUAN, currentPage);
 
             for (CSDNNewsItem item:list
                  ) {

@@ -1,6 +1,5 @@
 package com.honestme.androidexercise.app.csdn;
 
-import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -25,7 +24,7 @@ import in.srain.cube.views.ptr.PtrHandler;
 /**
  * Created by zhangconglin on 2015/12/31.
  */
-public class CSDNMainFragment extends Fragment {
+public class CSDNMainFragment extends android.support.v4.app.Fragment {
     private final int REFRESH = 0;
     private final int LOAD_MORE = 1;
 
@@ -122,7 +121,7 @@ public class CSDNMainFragment extends Fragment {
         try{
             List<CSDNNewsItem> list = new ArrayList<CSDNNewsItem>();
 
-            list = CSDNApiUtil.getDataFromHtml(mType,mPage);
+            list = CSDNApiUtil.getNewsTitleFromHtml(mType, mPage);
         }catch (Exception ex){
             ex.printStackTrace();
         }
